@@ -1,0 +1,37 @@
+:root {
+  --color-cta: #5964e0;
+  --color-text: #6e8098;
+  --color-theme-toggle: #ffffff;
+
+  --fw-1: 400;
+  --fw-2: 700;
+
+  --fs-1: 1.75rem;
+  --fs-2: 1.5rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1rem;
+  --fs-5: 0.875rem;
+
+  --line-height: 1.625rem;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #f4f6f8;
+  --color-card-bg: #ffffff;
+  --color-card-heading: #19202d;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #121721;
+  --color-card-bg: #19202d;
+  --color-card-heading: #ffffff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
