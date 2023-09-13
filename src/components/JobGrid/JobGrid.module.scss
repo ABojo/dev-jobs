@@ -1,0 +1,16 @@
+@use "../../sass/mixins/cta-button" as *;
+
+.grid {
+  margin-top: 9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  row-gap: 4rem;
+}
+
+.more {
+  @include cta-button;
+  margin: 0 auto;
+  display: block;
+  margin-block: 2rem;
+}
