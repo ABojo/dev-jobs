@@ -1,0 +1,22 @@
+.header {
+  background-color: var(--color-cta);
+  padding: 2rem;
+  padding-bottom: 5.5rem;
+  border-bottom-left-radius: 6rem;
+  background-image: url("../images/desktop/bg-pattern-header.svg");
+  background-position: center;
+  background-size: cover;
+
+  &__inner {
+    max-width: 70rem;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    color: var(--color-theme-toggle);
+  }
+}
