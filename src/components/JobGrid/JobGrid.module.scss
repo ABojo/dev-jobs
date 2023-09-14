@@ -1,5 +1,11 @@
 @use "../../sass/mixins/cta-button" as *;
 
+.container {
+  max-width: 70rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .grid {
   margin-top: 9rem;
   display: grid;
