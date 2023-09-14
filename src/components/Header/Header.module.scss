@@ -19,4 +19,47 @@
   &__heading {
     color: var(--color-theme-toggle);
   }
+
+  &__check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &__theme {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    label {
+      background-color: var(--color-theme-toggle);
+      width: 3.25rem;
+      height: 1.5rem;
+      border-radius: 5rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        background-color: var(--color-cta);
+        display: block;
+        height: 1rem;
+        width: 1rem;
+        position: absolute;
+        top: 50%;
+        border-radius: 100%;
+        transform: translateY(-50%);
+        left: 0.25rem;
+        transition: all 0.2s;
+      }
+    }
+  }
+
+  &__check:checked ~ label::before {
+    left: 2rem;
+  }
+
+  &__check:focus ~ label {
+    outline: auto;
+  }
 }
