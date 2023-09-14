@@ -1,3 +1,5 @@
+@use "./sass/mixins/cta-button" as *;
+
 :root {
   --color-cta: #5964e0;
   --color-text: #6e8098;
@@ -38,4 +40,11 @@
 
 body {
   background-color: var(--color-bg);
+}
+
+.more {
+  @include cta-button;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 2rem;
 }

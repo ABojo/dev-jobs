@@ -14,7 +14,6 @@ function JobGrid({ jobListings }: JobGridProps) {
           return <JobCard key={job.id} jobListing={job} />;
         })}
       </div>
-      <button className={styles.more}>Load More</button>
     </div>
   );
 }

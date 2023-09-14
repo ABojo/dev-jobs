@@ -4,6 +4,7 @@
   max-width: 70rem;
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .grid {
@@ -12,11 +13,4 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   row-gap: 4rem;
-}
-
-.more {
-  @include cta-button;
-  margin: 0 auto;
-  display: block;
-  margin-block: 2rem;
 }
