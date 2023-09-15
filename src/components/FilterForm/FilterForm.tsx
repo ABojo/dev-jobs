@@ -53,7 +53,9 @@ function FilterForm({ formState, formDispatch, runFilter }: FilterFormProps) {
             type="checkbox"
           />
           <label htmlFor="full-time"></label>
-          <p>Full-Time Only</p>
+          <p>
+            Full Time <span className={styles.form__only}>Only</span>
+          </p>
         </div>
         <button className={styles.form__submit}>Search</button>
       </div>

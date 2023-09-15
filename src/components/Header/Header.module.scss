@@ -1,11 +1,22 @@
+@use "../../sass/abstracts/breakpoints" as *;
+
 .header {
   background-color: var(--color-cta);
-  padding: 2rem;
+  padding: 2rem 0;
   padding-bottom: 5.5rem;
   border-bottom-left-radius: 6rem;
   background-image: url("../images/desktop/bg-pattern-header.svg");
   background-position: center;
   background-size: cover;
+
+  @media (max-width: $bp-3) {
+    background-image: url("../images/tablet/bg-pattern-header.svg");
+  }
+
+  @media (max-width: $bp-6) {
+    background-image: url("../images/mobile/bg-pattern-header.svg");
+    border-bottom-left-radius: 0;
+  }
 
   &__inner {
     max-width: 70rem;
