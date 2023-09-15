@@ -1,0 +1,115 @@
+@use "../../sass/mixins/cta-button" as *;
+
+.form {
+  background-color: var(--color-card-bg);
+  max-width: 70rem;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  top: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 19rem 22rem;
+  align-items: center;
+
+  &__input {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    input {
+      padding: 1.75rem 1rem;
+      border: none;
+      border-right: 1px solid rgba(#6e8098, 0.25);
+      font: inherit;
+      background-color: var(--color-card-bg);
+      color: var(--color-card-heading);
+      width: 100%;
+
+      &::placeholder {
+      }
+    }
+
+    &--title {
+      img {
+        left: 2.25rem;
+      }
+
+      input {
+        border-radius: 0.25rem 0rem 0rem 0.25rem;
+        padding-left: 5rem;
+      }
+    }
+
+    &--location {
+      img {
+        left: 1.5rem;
+      }
+
+      input {
+        padding-left: 3.5rem;
+      }
+    }
+  }
+
+  &__submit {
+    @include cta-button;
+    padding-inline: 2.25rem;
+    margin-left: 1.5rem;
+  }
+
+  &__third {
+    justify-self: end;
+    padding-right: 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__full {
+    display: flex;
+    align-items: center;
+
+    label {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.25rem;
+      background-color: var(--color-check);
+      transition: background-color 0.2s;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    p {
+      font-weight: var(--fw-2);
+      color: var(--color-card-heading);
+      margin-left: 1rem;
+    }
+  }
+
+  &__check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &__check:checked ~ label {
+    background-color: var(--color-cta);
+    background-image: url("../images/desktop/icon-check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+  }
+
+  &__check:focus ~ label {
+    outline: 1px solid black;
+  }
+}
