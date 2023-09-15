@@ -52,6 +52,14 @@
         left: 0.25rem;
         transition: all 0.2s;
       }
+
+      &:hover {
+        cursor: pointer;
+
+        &::before {
+          opacity: 0.5;
+        }
+      }
     }
   }
 
@@ -59,7 +67,7 @@
     left: 2rem;
   }
 
-  &__check:focus ~ label {
+  &__check:focus-visible ~ label {
     outline: auto;
   }
 }
