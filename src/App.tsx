@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import JobGrid from "./components/JobGrid/JobGrid";
 import JobListing from "./components/JobListing/JobListing";
 import FilterForm from "./components/FilterForm/FilterForm";
+import MobileFilterForm from "./components/MobileFilterForm/MobileFilterForm";
 
 import JobListingT from "./types/JobListing";
 import jobListings from "./utils/data.json";
@@ -67,6 +68,7 @@ function App() {
               element={
                 <>
                   <FilterForm formState={formState} formDispatch={formDispatch} runFilter={runFilter} />
+                  <MobileFilterForm formState={formState} formDispatch={formDispatch} runFilter={runFilter} />
                   <JobGrid jobListings={visibleJobs} />
                   {visibleJobs.length >= itemsPerPage * pagesVisible && (
                     <button onClick={incrementPage} className="more">
