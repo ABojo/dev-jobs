@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormState from "../../types/FormState";
 import FormAction from "../../types/FormAction";
+import Checkbox from "../Checkbox/Checkbox";
 import styles from "./MobileFilterForm.module.scss";
 
 interface MobileFilterFormProps {
@@ -65,19 +66,14 @@ function MobileFilterForm({ formState, formDispatch, runFilter }: MobileFilterFo
               />
             </div>
             <div className={styles.modal__bottom}>
-              <div className={styles.modal__full}>
-                <input
-                  onChange={(e) => {
-                    formDispatch({ type: "SET_FULL_TIME", payload: e.target.checked });
-                  }}
-                  checked={formState.fullTime}
-                  id="full-time"
-                  className={styles.modal__check}
-                  type="checkbox"
-                />
-                <label htmlFor="full-time"></label>
-                <p>Full Time Only</p>
-              </div>
+              <Checkbox
+                id="full-time"
+                isChecked={formState.fullTime}
+                onChange={(e) => {
+                  formDispatch({ type: "SET_FULL_TIME", payload: e.target.checked });
+                }}
+                labelText="Full-Time Only"
+              />
               <button
                 onClick={() => {
                   runFilter();

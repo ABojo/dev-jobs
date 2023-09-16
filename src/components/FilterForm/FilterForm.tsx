@@ -1,6 +1,7 @@
 import FormState from "../../types/FormState";
 import FormAction from "../../types/FormAction";
 import styles from "./FilterForm.module.scss";
+import Checkbox from "../Checkbox/Checkbox";
 
 interface FilterFormProps {
   formState: FormState;
@@ -42,21 +43,17 @@ function FilterForm({ formState, formDispatch, runFilter }: FilterFormProps) {
         />
       </div>
       <div className={styles.form__third}>
-        <div className={styles.form__full}>
-          <input
-            onChange={(e) => {
-              formDispatch({ type: "SET_FULL_TIME", payload: e.target.checked });
-            }}
-            checked={formState.fullTime}
-            id="full-time"
-            className={styles.form__check}
-            type="checkbox"
-          />
-          <label htmlFor="full-time"></label>
-          <p>
-            Full Time <span className={styles.form__only}>Only</span>
+        <Checkbox
+          id="full-time"
+          isChecked={formState.fullTime}
+          onChange={(e) => {
+            formDispatch({ type: "SET_FULL_TIME", payload: e.target.checked });
+          }}
+        >
+          <p className={styles.form__full}>
+            Full-Time<span className={styles.form__only}> Only</span>
           </p>
-        </div>
+        </Checkbox>
         <button className={styles.form__submit}>Search</button>
       </div>
     </form>
