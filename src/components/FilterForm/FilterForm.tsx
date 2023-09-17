@@ -2,6 +2,7 @@ import FormState from "../../types/FormState";
 import FormAction from "../../types/FormAction";
 import styles from "./FilterForm.module.scss";
 import Checkbox from "../Checkbox/Checkbox";
+import Input from "../Input/Input";
 
 interface FilterFormProps {
   formState: FormState;
@@ -18,7 +19,22 @@ function FilterForm({ formState, formDispatch, runFilter }: FilterFormProps) {
         runFilter();
       }}
     >
-      <div className={`${styles.form__input} ${styles["form__input--title"]}`}>
+      <Input
+        inputProps={{
+          onChange: (e) => {
+            formDispatch({ type: "SET_TITLE", payload: e.target.value });
+          },
+          placeholder: "Filter by title...",
+          "aria-label": "Job Title",
+          value: formState.title,
+          className: styles["form__title-input"],
+        }}
+        iconProps={{
+          className: styles["form__title-icon"],
+        }}
+        iconUrl="/images/desktop/icon-search.svg"
+      />
+      {/*<div className={`${styles.form__input} ${styles["form__input--title"]}`}>
         <img className={styles.form__icon} src="/images/desktop/icon-search.svg" alt="" />
         <input
           onChange={(e) => {
@@ -29,8 +45,21 @@ function FilterForm({ formState, formDispatch, runFilter }: FilterFormProps) {
           placeholder="Filter by title..."
           aria-label="Job title"
         />
-      </div>
-      <div className={`${styles.form__input} ${styles["form__input--location"]}`}>
+        </div> */}
+
+      <Input
+        inputProps={{
+          onChange: (e) => {
+            formDispatch({ type: "SET_LOCATION", payload: e.target.value });
+          },
+          value: formState.location,
+          placeholder: "Filter by location...",
+          "aria-label": "Location",
+        }}
+        iconUrl="/images/desktop/icon-location.svg"
+      />
+
+      {/*<div className={`${styles.form__input} ${styles["form__input--location"]}`}>
         <img className={styles.form__icon} src="/images/desktop/icon-location.svg" alt="" />
         <input
           onChange={(e) => {
@@ -41,7 +70,8 @@ function FilterForm({ formState, formDispatch, runFilter }: FilterFormProps) {
           placeholder="Filter by location..."
           aria-label="Location"
         />
-      </div>
+        </div> */}
+
       <div className={styles.form__third}>
         <Checkbox
           id="full-time"
