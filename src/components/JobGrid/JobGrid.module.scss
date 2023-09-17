@@ -11,6 +11,10 @@
   @media (max-width: $bp-5) {
     max-width: 25rem;
   }
+
+  @media (max-width: $bp-4) {
+    margin-top: 2rem;
+  }
 }
 
 .grid {
