@@ -59,9 +59,9 @@ function App() {
 
   return (
     <>
-      <Header />
       <main>
         <Router>
+          <Header />
           <Routes>
             <Route
               path="/"

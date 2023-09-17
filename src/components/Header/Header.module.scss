@@ -29,6 +29,14 @@
 
   &__heading {
     color: var(--color-theme-toggle);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-2);
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &__check {

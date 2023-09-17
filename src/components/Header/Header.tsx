@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 import useTheme from "../../hooks/useTheme";
 
@@ -7,7 +8,9 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header__inner}>
-        <h1 className={styles.header__heading}>devjobs</h1>
+        <Link to="/" className={styles.header__heading}>
+          devjobs
+        </Link>
         <div className={styles.header__theme}>
           <input className={styles.header__check} id="theme" type="checkbox" checked={isDark} onChange={toggleTheme} />
           <img src="/images/desktop/icon-sun.svg" alt="" />
