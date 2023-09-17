@@ -22,12 +22,14 @@
   --color-bg: #f4f6f8;
   --color-card-bg: #ffffff;
   --color-card-heading: #19202d;
+  --color-check: rgba(25, 32, 45, 0.1);
 }
 
 :root[data-theme="dark"] {
   --color-bg: #121721;
   --color-card-bg: #19202d;
   --color-card-heading: #ffffff;
+  --color-check: rgba(255, 255, 255, 0.1);
 }
 
 *,
