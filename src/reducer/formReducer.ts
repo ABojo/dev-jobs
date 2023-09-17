@@ -9,6 +9,8 @@ function formReducer(state: FormState, action: FormAction): FormState {
       return { ...state, location: action.payload };
     case "SET_FULL_TIME":
       return { ...state, fullTime: action.payload };
+    case "SET_FORM":
+      return { ...action.payload };
   }
 }
 

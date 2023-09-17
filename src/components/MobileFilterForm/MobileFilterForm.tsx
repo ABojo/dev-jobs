@@ -7,10 +7,10 @@ import styles from "./MobileFilterForm.module.scss";
 interface MobileFilterFormProps {
   formState: FormState;
   formDispatch: React.Dispatch<FormAction>;
-  runFilter: () => void;
+  filterDispatch: React.Dispatch<FormAction>;
 }
 
-function MobileFilterForm({ formState, formDispatch, runFilter }: MobileFilterFormProps) {
+function MobileFilterForm({ formState, formDispatch, filterDispatch }: MobileFilterFormProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleIsOpen() {
@@ -22,7 +22,7 @@ function MobileFilterForm({ formState, formDispatch, runFilter }: MobileFilterFo
       className={styles.form}
       onSubmit={(e) => {
         e.preventDefault();
-        runFilter();
+        filterDispatch({ type: "SET_FORM", payload: formState });
       }}
     >
       <div className={styles.form__input}>
@@ -76,7 +76,7 @@ function MobileFilterForm({ formState, formDispatch, runFilter }: MobileFilterFo
               />
               <button
                 onClick={() => {
-                  runFilter();
+                  filterDispatch({ type: "SET_FORM", payload: formState });
                   toggleIsOpen();
                 }}
                 type="submit"

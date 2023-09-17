@@ -7,16 +7,16 @@ import Input from "../Input/Input";
 interface FilterFormProps {
   formState: FormState;
   formDispatch: React.Dispatch<FormAction>;
-  runFilter: () => void;
+  filterDispatch: React.Dispatch<FormAction>;
 }
 
-function FilterForm({ formState, formDispatch, runFilter }: FilterFormProps) {
+function FilterForm({ formState, formDispatch, filterDispatch }: FilterFormProps) {
   return (
     <form
       className={styles.form}
       onSubmit={(e) => {
         e.preventDefault();
-        runFilter();
+        filterDispatch({ type: "SET_FORM", payload: formState });
       }}
     >
       <Input

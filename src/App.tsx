@@ -16,6 +16,7 @@ const itemsPerPage = 12;
 
 function App() {
   const [formState, formDispatch] = useReducer(formReducer, defaultState);
+  const [filterState, filterDispatch] = useReducer(formReducer, defaultState);
   const [pagesVisible, setPagesVisible] = useState(1);
   const [filteredJobs, setFilteredJobs] = useState<JobListingT[]>([]);
   const [visibleJobs, setVisibleJobs] = useState<JobListingT[]>([]);
@@ -32,25 +33,22 @@ function App() {
     const jobTitle = job.position.toLowerCase();
     const jobLocation = job.location.toLowerCase();
     const jobContract = job.contract.toLowerCase();
-    const formTitle = formState.title.toLowerCase();
-    const formLocation = formState.location.toLowerCase();
+    const formTitle = filterState.title.toLowerCase();
+    const formLocation = filterState.location.toLowerCase();
 
     if (!jobTitle.includes(formTitle)) return false;
     if (!jobLocation.includes(formLocation)) return false;
-    if (formState.fullTime && jobContract !== "full time") return false;
+    if (filterState.fullTime && jobContract !== "full time") return false;
 
     return true;
   }
 
-  function runFilter() {
+  useEffect(() => {
     const newFilteredJobs: JobListingT[] = jobListings.filter(filterJob);
 
     setFilteredJobs(newFilteredJobs);
     setPagesVisible(1);
-  }
-
-  //filter results on mount
-  useEffect(runFilter, []);
+  }, [filterState]);
 
   //adds another page of jobs to the grid
   useEffect(() => {
@@ -67,9 +65,9 @@ function App() {
               path="/"
               element={
                 <>
-                  <FilterForm formState={formState} formDispatch={formDispatch} runFilter={runFilter} />
-                  <MobileFilterForm formState={formState} formDispatch={formDispatch} runFilter={runFilter} />
-                  <JobGrid jobListings={visibleJobs} />
+                  <FilterForm formState={formState} formDispatch={formDispatch} filterDispatch={filterDispatch} />
+                  <MobileFilterForm formState={formState} formDispatch={formDispatch} filterDispatch={filterDispatch} />
+                  <JobGrid filterDispatch={filterDispatch} appliedFilter={filterState} jobListings={visibleJobs} />
                   {visibleJobs.length >= itemsPerPage * pagesVisible && (
                     <button onClick={incrementPage} className="more">
                       Load More

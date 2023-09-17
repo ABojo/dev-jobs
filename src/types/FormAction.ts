@@ -1,3 +1,5 @@
+import FormState from "./FormState";
+
 interface InputAction {
   type: "SET_TITLE" | "SET_LOCATION";
   payload: string;
@@ -8,6 +10,11 @@ interface CheckAction {
   payload: boolean;
 }
 
-type FormAction = InputAction | CheckAction;
+interface SetAction {
+  type: "SET_FORM";
+  payload: FormState;
+}
+
+type FormAction = InputAction | SetAction | CheckAction;
 
 export default FormAction;
