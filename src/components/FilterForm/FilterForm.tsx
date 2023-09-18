@@ -31,6 +31,7 @@ function FilterForm({ formState, formDispatch, filterDispatch }: FilterFormProps
         }}
         iconProps={{
           className: styles["form__title-icon"],
+          alt: "",
         }}
         iconUrl="/images/desktop/icon-search.svg"
       />
@@ -56,6 +57,7 @@ function FilterForm({ formState, formDispatch, filterDispatch }: FilterFormProps
           placeholder: "Filter by location...",
           "aria-label": "Location",
         }}
+        iconProps={{ alt: "" }}
         iconUrl="/images/desktop/icon-location.svg"
       />
 

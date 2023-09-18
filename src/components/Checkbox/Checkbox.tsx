@@ -10,7 +10,14 @@ interface CheckboxProps {
 function Checkbox({ id, isChecked, onChange, children, labelText }: CheckboxProps) {
   return (
     <div className={styles.container}>
-      <input onChange={onChange} checked={isChecked} id={id} className={styles.container__check} type="checkbox" />
+      <input
+        onChange={onChange}
+        checked={isChecked}
+        id={id}
+        className={styles.container__check}
+        type="checkbox"
+        aria-label={labelText}
+      />
       <label htmlFor={id} className={styles.container__label}></label>
       {labelText && <p className={styles.container__text}>{labelText}</p>}
       {children}

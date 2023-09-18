@@ -12,7 +12,14 @@ function Header() {
           devjobs
         </Link>
         <div className={styles.header__theme}>
-          <input className={styles.header__check} id="theme" type="checkbox" checked={isDark} onChange={toggleTheme} />
+          <input
+            className={styles.header__check}
+            id="theme"
+            type="checkbox"
+            checked={isDark}
+            onChange={toggleTheme}
+            aria-label="Toggle Theme"
+          />
           <img src="/images/desktop/icon-sun.svg" alt="" />
           <label htmlFor="theme"></label>
           <img src="/images/desktop/icon-moon.svg" alt="" />
