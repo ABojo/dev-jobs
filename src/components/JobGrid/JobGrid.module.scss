@@ -97,3 +97,10 @@
     }
   }
 }
+
+.error {
+  color: var(--color-card-heading);
+  font-size: var(--fs-1);
+  text-align: center;
+  font-weight: var(--fw-2);
+}

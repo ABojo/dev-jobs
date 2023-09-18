@@ -57,11 +57,15 @@ function JobGrid({ jobListings, appliedFilter, filterDispatch }: JobGridProps) {
           </div>
         )}
       </div>
-      <div className={styles.grid}>
-        {jobListings.map((job) => {
-          return <JobCard key={job.id} jobListing={job} />;
-        })}
-      </div>
+      {jobListings.length > 0 ? (
+        <div className={styles.grid}>
+          {jobListings.map((job) => {
+            return <JobCard key={job.id} jobListing={job} />;
+          })}
+        </div>
+      ) : (
+        <p className={styles.error}>Sorry, we couldn't find any job listings ☹️</p>
+      )}
     </div>
   );
 }
