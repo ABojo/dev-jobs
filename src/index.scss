@@ -1,4 +1,5 @@
 @use "./sass/mixins/cta-button" as *;
+@use "./sass/abstracts/breakpoints" as *;
 
 :root {
   --color-cta: #5964e0;
@@ -16,6 +17,10 @@
 
   --line-height: 1.625rem;
   font-family: "Kumbh Sans", sans-serif;
+
+  @media (max-width: $bp-4) {
+    --fs-1: 1.5rem;
+  }
 }
 
 :root[data-theme="light"] {
