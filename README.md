@@ -16,7 +16,7 @@ you can open the listing and read more.
 
 - You can click [here](https://abojo-devjobs.netlify.app/) to test the app.
 
-- You can click [here](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l/hub) to see the design it was based on.
+- You can click [here](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l/) to see the design it was based on.
 
 ## Images
 
